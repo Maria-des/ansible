@@ -1,0 +1,12 @@
+- name : Install nginx
+  hosts: nginx
+  gather_facts: yes
+  tasks:
+  - debug: msg="Hello world!"
+  - shell: echo "Hello world!"
+  tasks:
+  - shell: sudo amazon-linux-extras install epel -y
+  - shell: sudo yum-config-manager --enable epel
+  - shell: sudo yum install nginx -y
+  - shell: sudo systemctl enable nginx
+  - shell: sudo systemctl start nginx
